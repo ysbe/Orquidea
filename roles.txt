@@ -1,0 +1,15 @@
+-- Table: public.roles
+
+-- DROP TABLE public.roles;
+
+CREATE TABLE public.roles
+(
+  codigo_rol numeric NOT NULL,
+  nombre text,
+  CONSTRAINT roles_pkey PRIMARY KEY (codigo_rol)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.roles
+  OWNER TO postgres;

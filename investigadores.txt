@@ -1,0 +1,20 @@
+-- Table: public.investigadores
+
+-- DROP TABLE public.investigadores;
+
+CREATE TABLE public.investigadores
+(
+  id numeric NOT NULL,
+  nombre text,
+  apellido text,
+  cedula "char",
+  direccion character(1),
+  telefono numeric,
+  nivel_academico text,
+  CONSTRAINT investigadores_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.investigadores
+  OWNER TO postgres;

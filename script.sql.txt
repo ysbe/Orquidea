@@ -1,0 +1,144 @@
+-- Table: public.usuario
+
+-- DROP TABLE public.usuario;
+
+CREATE TABLE public.usuario
+(
+  codigo_usuario numeric NOT NULL,
+  nombre text,
+  apellido text,
+  clave character(1) NOT NULL,
+  direccion "char",
+  sexo text,
+  CONSTRAINT usuario_pkey PRIMARY KEY (codigo_usuario, clave)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.usuario
+  OWNER TO postgres;
+
+-- Table: public.roles
+
+-- DROP TABLE public.roles;
+
+CREATE TABLE public.roles
+(
+  codigo_rol numeric NOT NULL,
+  nombre text,
+  CONSTRAINT roles_pkey PRIMARY KEY (codigo_rol)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.roles
+  OWNER TO postgres;
+
+- Table: public.metodos
+
+-- DROP TABLE public.metodos;
+
+CREATE TABLE public.metodos
+(
+  id_rol numeric NOT NULL,
+  id_metodos numeric NOT NULL,
+  CONSTRAINT metodos_pkey PRIMARY KEY (id_rol, id_metodos)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.metodos
+  OWNER TO postgres;
+
+-- Table: public."lineas de investigacion"
+
+-- DROP TABLE public."lineas de investigacion";
+
+CREATE TABLE public."lineas de investigacion"
+(
+  id numeric NOT NULL,
+  jerarquia text,
+  descripcion text,
+  CONSTRAINT "lineas de investigacion_pkey" PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public."lineas de investigacion"
+  OWNER TO postgres;
+
+- Table: public.investigadores
+
+-- DROP TABLE public.investigadores;
+
+CREATE TABLE public.investigadores
+(
+  id numeric NOT NULL,
+  nombre text,
+  apellido text,
+  cedula "char",
+  direccion character(1),
+  telefono numeric,
+  nivel_academico text,
+  CONSTRAINT investigadores_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.investigadores
+  OWNER TO postgres;
+-- Table: public.investigaciones
+
+-- DROP TABLE public.investigaciones;
+
+CREATE TABLE public.investigaciones
+(
+  id numeric NOT NULL,
+  tipos_investigacion text,
+  CONSTRAINT investigaciones_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.investigaciones
+  OWNER TO postgres;
+
+-- Table: public.fases
+
+-- DROP TABLE public.fases;
+
+CREATE TABLE public.fases
+(
+  id numeric NOT NULL,
+  fecha_inicio "char",
+  fecha_final "char",
+  descaripcion text,
+  observacion text,
+  CONSTRAINT fases_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.fases
+  OWNER TO postgres;
+
+-- Table: public.comunidades
+
+-- DROP TABLE public.comunidades;
+
+CREATE TABLE public.comunidades
+(
+  id numeric NOT NULL,
+  nombre text,
+  direccion character(1),
+  rif "char",
+  municipio text,
+  parroquia text,
+  estado text,
+  CONSTRAINT comunidades_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.comunidades
+  OWNER TO postgres;

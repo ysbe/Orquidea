@@ -1,0 +1,18 @@
+ Table: public.fases
+
+-- DROP TABLE public.fases;
+
+CREATE TABLE public.fases
+(
+  id numeric NOT NULL,
+  fecha_inicio "char",
+  fecha_final "char",
+  descaripcion text,
+  observacion text,
+  CONSTRAINT fases_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.fases
+  OWNER TO postgres;

@@ -1,0 +1,15 @@
+- Table: public.metodos
+
+-- DROP TABLE public.metodos;
+
+CREATE TABLE public.metodos
+(
+  id_rol numeric NOT NULL,
+  id_metodos numeric NOT NULL,
+  CONSTRAINT metodos_pkey PRIMARY KEY (id_rol, id_metodos)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.metodos
+  OWNER TO postgres;

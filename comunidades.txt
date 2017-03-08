@@ -1,0 +1,20 @@
+-- Table: public.comunidades
+
+-- DROP TABLE public.comunidades;
+
+CREATE TABLE public.comunidades
+(
+  id numeric NOT NULL,
+  nombre text,
+  direccion character(1),
+  rif "char",
+  municipio text,
+  parroquia text,
+  estado text,
+  CONSTRAINT comunidades_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.comunidades
+  OWNER TO postgres;

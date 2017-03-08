@@ -1,0 +1,16 @@
+ -- Table: public.investigaciones
+
+-- DROP TABLE public.investigaciones;
+
+CREATE TABLE public.investigaciones
+(
+  id numeric NOT NULL,
+  tipos_investigacion text,
+  CONSTRAINT investigaciones_pkey PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.investigaciones
+  OWNER TO postgres;
+

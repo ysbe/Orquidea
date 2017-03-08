@@ -1,0 +1,19 @@
+-- Table: public.usuario
+
+-- DROP TABLE public.usuario;
+
+CREATE TABLE public.usuario
+(
+  codigo_usuario numeric NOT NULL,
+  nombre text,
+  apellido text,
+  clave character(1) NOT NULL,
+  direccion "char",
+  sexo text,
+  CONSTRAINT usuario_pkey PRIMARY KEY (codigo_usuario, clave)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public.usuario
+  OWNER TO postgres;

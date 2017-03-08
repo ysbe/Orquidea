@@ -1,0 +1,16 @@
+-- Table: public."lineas de investigacion"
+
+-- DROP TABLE public."lineas de investigacion";
+
+CREATE TABLE public."lineas de investigacion"
+(
+  id numeric NOT NULL,
+  jerarquia text,
+  descripcion text,
+  CONSTRAINT "lineas de investigacion_pkey" PRIMARY KEY (id)
+)
+WITH (
+  OIDS=FALSE
+);
+ALTER TABLE public."lineas de investigacion"
+  OWNER TO postgres;
